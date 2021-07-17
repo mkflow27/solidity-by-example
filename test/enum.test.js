@@ -25,5 +25,15 @@ describe("Test the enum contract", () => {
         expect(await enumContract.status()).to.be.equal(BigNumber.from(0));
         expect(await enumContract.status()).to.be.equal(BigNumber.from(0));
 
+    });
+    it("tests the Enum import contract", async () => {
+        const EnumSecondContract = await ethers.getContractFactory("EnumSecond");
+        const enumSecondContract = await EnumSecondContract.deploy()
+        await enumSecondContract.deployed()
+
+        //test the contract which imports the enum
+        expect(await enumSecondContract.status()).to.be.equal(BigNumber.from(0));
+
+
     })
 })
