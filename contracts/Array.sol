@@ -35,7 +35,7 @@ contract CompactArray {
     uint[] public arr;
 
     function remove(uint _index) public {
-        //Move the last element into the place to dete. 
+        //Move the last element into the place to delete. 
         arr[_index] = arr[arr.length - 1];
         // remove last item
         arr.pop();
