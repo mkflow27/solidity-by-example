@@ -9,4 +9,26 @@ contract Error {
         // other functions
         require(_i > 10, "Input must be bigger than 10");
     }
+
+    function testRevert(uint _i) pure public {
+        //
+        //
+        //
+        if (_i < 10) {
+            revert("Input must be greater than 10");
+        }
+    }
+
+    uint public num;
+
+    function testAssert() view public {
+        // Assert should only be used to test for internal errors
+        // and to check invariants
+
+        // Here we assert that num is always equal to 0
+        // since it is impossible to update the value of num
+        assert(num == 0);
+    }
+
+    
 }
